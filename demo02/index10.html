@@ -1,0 +1,12 @@
+export function isExcel(file) {
+let fileName = file.name;
+let index = fileName.lastIndexOf(".");
+if (index === -1)
+return false;
+
+let fileSuff = fileName.substring(index + 1, fileName.length);
+if (fileSuff !== "xls")
+return false;
+
+return true;
+}

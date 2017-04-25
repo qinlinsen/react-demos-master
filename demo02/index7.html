@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello wold</title>
+    <!--导入三个文件-->
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="sixi"></div>
+<script type="text/babel">
+    //our code goes here
+   //define a component.
+    var ParentNode=React.createClass({
+        //每一个组件必须要有一个render方法，用于输出内容。相当于java中的main.
+        render:function () {
+            return (
+                    <ol>
+                        {
+//                            children是本地属性。
+                           React.Children.map(this.props.children,function (child) {
+                               return <li>{child}</li>;
+                           })
+                        }
+                    </ol>
+            );
+        }
+    });
+   ReactDOM.render(
+           //调用组件
+           <ParentNode>
+               <span>人民</span>
+               <p>的民义</p>
+           </ParentNode>,
+           document.getElementById("sixi")
+   );
+</script>
+</body>
+</html>

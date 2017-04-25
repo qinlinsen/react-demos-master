@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello wold</title>
+    <!--导入三个文件-->
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="sixi"></div>
+<script type="text/babel">
+    //our code goes here
+   //define a component
+    var Ouyangfeng=React.createClass({
+//        render函数用于组件的输出。
+        render:function () {
+            //组件只能有一个顶层标签。
+            return <p>一统{this.props.tianxia},{this.props.genetical} {this.props.renmin} {this.props.wansui}
+            </p>
+        }
+    });
+    ReactDOM.render(
+            //调用组件，也就是调用函数：调用组件的时候，会自动创建组件的实例。
+// 从这里可以看出组件的用法与原生的 HTML 标签完全一致，可以任意加入属性
+            <Ouyangfeng tianxia="天下" genetical="中国" renmin="人民" wansui="万岁" />,
+            document.getElementById("sixi")
+    );
+</script>
+</body>
+</html>

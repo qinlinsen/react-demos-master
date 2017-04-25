@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello wold</title>
+    <!--导入三个文件-->
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="sixi"></div>
+<script type="text/babel">
+    //our code goes here
+//    this.props.children这个本地属性的用法。
+    //定义一个组件。
+    var ParentNodes=React.createClass({
+        //每个组件都有一个render方法。
+        render:function () {
+            return (
+                    <ol>
+                        {
+                            React.Children.map(this.props.children,function (world) {
+                                return <li>{world}</li>
+                            })
+                        }
+                    </ol>
+            );
+        }
+    });
+    ReactDOM.render(
+            //调用组件：
+            <ParentNodes>
+                <p>人民</p>
+                <h1>的</h1>
+                <h2>名义</h2>
+            </ParentNodes>,
+            document.getElementById("sixi")
+    );
+</script>
+</body>
+</html>

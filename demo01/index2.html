@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello world</title>
+    <!--引入三个文件-->
+    <!--react的核心库-->
+    <script src="../build/react.js"></script>
+    <!--ReactDom的核心库-->
+    <script src="../build/react-dom.js"></script>
+    <!--浏览器翻译的核心库-->
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+        ReactDOM.render(
+                <h1>hello,world</h1>,
+//                上面<h1></h1>，标签后面的逗号千万不能少，
+        // 否则会报embeded：unexpected
+                document.getElementById("example")
+        )
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello wold</title>
+    <!--导入三个文件-->
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="sixi"></div>
+<script type="text/babel">
+    //our code goes here
+    //define a component.
+    var Freak=React.createClass({
+        getInitialState:function () {
+            return {value:'world'};
+        },
+        handleChange:function (event) {
+            this.setState({value: event.target.value});
+        },
+        render:function () {
+            var value=this.state.value;
+            return (
+                    <div>
+                        <input type="text" value={value} onChange={this.handleChange} />
+                        <p>{value}</p>
+                    </div>
+            );
+        }
+    });
+    ReactDOM.render(
+            //调用Freak
+            <Freak/>,
+            document.getElementById("sixi")
+    );
+</script>
+</body>
+</html>

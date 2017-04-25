@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var numbers=[1,4,9];
+        var roots=numbers.map(Math.sqrt);
+        document.writeln("roots="+roots);
+        document.writeln("<br>");
+        document.writeln("numbers="+numbers);
+        var detachTwo=numbers.map(function (x) {
+            return x-2;
+        });
+        document.writeln("<br>"+"detachTwo="+detachTwo);
+    </script>
+</body>
+</html>

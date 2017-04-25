@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello wold</title>
+    <!--导入三个文件-->
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="sixi"></div>
+<script type="text/babel">
+    //our code goes here
+    //define a component.
+    var Chaebol=React.createClass({
+        //define a funtion.
+        sixi:function () {
+            this.refs.myTextInput.focus();
+        },
+        render:function () {
+            return (
+                    <div>
+                        <input type="text" ref="myTextInput"/>
+                        {/*调用sixi这个函数：是this.sixi 而不是this.sixi()*/}
+                        <br/>
+                        <input type="button" value="beautiful" onclick={this.sixi}/>
+                    </div>
+            );
+        }
+    });
+    ReactDOM.render(
+            //调用函数或者讲Component.
+            <Chaebol/>,
+            document.getElementById("sixi")
+    );
+</script>
+</body>
+</html>

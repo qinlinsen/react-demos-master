@@ -40,7 +40,7 @@ var App = (function (_React$Component) {
       });
     }
   }, {
-    key: 'handleClick',
+    key: 'sixi',
     value: function handleClick() {
       this.setState({
         items: this.state.items.concat('Item ' + this.state.items.length)

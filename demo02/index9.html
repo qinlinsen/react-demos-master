@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>propsType的用法</title>
+    <!--导入三个文件-->
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="sixi"></div>
+    <script type="text/babel">
+        //our code goes here
+        //define a component
+        var people="1";
+        var UsePropTypes=React.createClass(
+                {
+                    //定义组件的一个必要的属性，且该属性是number类型。
+                    propTypes:{
+                        world:React.PropTypes.number.isRequired,
+                    },
+                    //每个组件都有一个render方法：
+                    render:function () {
+                        return <p>{this.props.world}</p>
+                    }
+                }
+        );
+        //调用组件UsePropTypes
+        ReactDOM.render(
+                <UsePropTypes world={people}/>,
+                document.getElementById("sixi")
+        );
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello wold</title>
+    <!--导入三个文件-->
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="sixi"></div>
+<script type="text/babel">
+    //our code goes here
+    //define a component.
+    var Floatilla=React.createClass({
+     getInitialState:function () {
+     return {isBeautiful:true}
+     },
+     handleClick:function (event) {
+     this.setState({isBeautiful:!this.state.isBeautiful});
+     },
+     //render方法：
+     render:function () {
+     var text=this.state.isBeautiful? 'beautifulueo':'ugly';
+     return (
+     <p onclick={this.handleClick}>
+     you {text} this ,change your choice.
+     </p>
+     );
+     }
+     });
+     ReactDOM.render(
+     //调用组件：
+     <Floatilla/>,
+     document.getElementById('sixi')
+     );
+
+</script>
+</body>
+</html>

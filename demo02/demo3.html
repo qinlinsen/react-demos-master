@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--导入三个文件-->
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+    <meta charset="UTF-8">
+    <title>hello world</title>
+</head>
+<body>
+<div id="sixi"></div>
+<script type="text/babel">
+    var ouyangfeng=["仙女湖","泗溪","袁河","老牛"];
+    ReactDOM.render(
+            <div>
+                {
+                   ouyangfeng.map(function (location) {
+                        return <p> {location}美!</p>
+                    })
+                }
+            </div>,
+            document.getElementById("sixi")
+    );
+
+</script>
+</body>
+</html>

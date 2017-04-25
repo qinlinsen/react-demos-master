@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello wold</title>
+    <!--导入三个文件-->
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="sixi"></div>
+<script type="text/babel">
+    //our code goes here
+    //define component.
+    var people = 23;
+    var YuanRiver2 = React.createClass(
+            {
+                //定义这个组件的必要属性。
+                propTypes: {
+                    name: React.PropTypes.string.isRequired,
+                    age: React.PropTypes.number.isRequired,
+                },
+
+                //给属性值赋默认值。
+                getDefaultProps: function () {
+                    return {
+                        name: "ouyangfeng",
+                        age: 36,
+                    };
+                },
+                //给组件定义render()方法：
+                render: function () {
+                    return <h1>{this.props.age} {this.props.name}</h1>
+                }
+            }
+    );
+    //调用组件：
+    ReactDOM.render(
+            <YuanRiver2 />,
+            document.getElementById("sixi")
+    );
+</script>
+</body>
+</html>

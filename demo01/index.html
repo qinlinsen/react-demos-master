@@ -1,19 +1,41 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <!--以当前目录为参考点，react.js的目录为../.react.js
-    其他的以此类推。-->
-    <script src="../build/react.js"></script>
-    <script src="../build/react-dom.js"></script>
-    <script src="../build/browser.min.js"></script>
-  </head>
-  <body>
-    <div id="example"></div>
-    <script type="text/babel">
-      ReactDOM.render(
-        <h1>Hello, world!</h1>,
-        document.getElementById('example')
-      );
-    </script>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>hello wold</title>
+  <!--导入三个文件-->
+  <script src="../build/react.js"></script>
+  <script src="../build/react-dom.js"></script>
+  <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="sixi"></div>
+<script type="text/babel">
+  //our code goes here
+  //define a component.
+  var YuanRiver=React.createClass({
+    //定义本组件必须要有的属性：
+    propTypes:{
+      length:React.PropTypes.number.isRequired,
+      translucent:React.PropTypes.string.isRequired,
+    },
+    //给组件的属性赋默认值：
+    getDefaultProps : function () {
+      return {
+        length : 21,
+        translucent:'23'
+      };
+    },
+    //给组件定义一个render函数：
+    render:function () {
+      return <h1>this river length:{this.props.length}  and is translucent:{this.props.translucent}</h1>
+    }
+  });
+  //调用组件:
+  ReactDOM.render(
+          <YuanRiver length="" translucent=""/>,
+          document.getElementById("sixi")
+  );
+</script>
+</body>
 </html>

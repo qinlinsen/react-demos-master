@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello wold</title>
+    <!--导入三个文件-->
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+    <div id="sixi"></div>
+    <script type="text/babel">
+        //our code goes here
+        var labyrinth=[
+                <h1>we are chinese</h1>,
+                <h2>English</h2>,
+                <h3>stifle</h3>
+        ];
+        ReactDOM.render(
+                <div>
+                    { /* jsx允许直接在模板插入js变量*/}
+                    {labyrinth}
+                </div>,
+                document.getElementById("sixi")
+        );
+    </script>
+</body>
+</html>
